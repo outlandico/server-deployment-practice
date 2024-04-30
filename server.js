@@ -43,6 +43,11 @@ function handleBroken( req, res, next ) {
     res.status(500).send("We broke it on purpose!");
 }
 
+function forceError(req, res, next) {
+    // throw new Error("You messed up");
+    next('you messsed up')
+  }
+
 // Exported Server Start Function
 function start(port) {
     app.listen(port, () => {
